@@ -4,6 +4,7 @@ import (
 	"FTPDumper/Core"
 	"FTPDumper/Utility"
 	"FTPDumper/ftp"
+	"bytes"
 	"crypto/sha256"
 	"encoding/hex"
 	"fmt"
@@ -81,7 +82,8 @@ func Try(address, port, user, password string) error {
 		}
 	}
 
-	_ = client.UploadFile("FTPDUMPER.txt", Core.DumperText)
+	_ = client.UploadFile("FTPDUMPER.txt", bytes.NewReader([]byte("Fix your server credentials\n"+
+		"You Can Download FTPDumper From https://github.com/MatrixTM/FTPDumper\n")))
 
 	return nil
 }

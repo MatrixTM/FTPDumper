@@ -36,12 +36,12 @@ func main() {
 		}
 	}()
 
-	for next, err := reader.Next(); next != "" && err == nil; next, err = reader.Next() {
+	for address, err := reader.Next(); address != "" && err == nil; address, err = reader.Next() {
 		pool.Submit(func() {
 			for _, port := range Core.Ports {
 				for _, user := range Core.Users {
 					for _, password := range Core.Passwords {
-						err := Dumper.Try(next, port, user, password)
+						err := Dumper.Try(address, port, user, password)
 						if errors.Is(err, Core.TimeoutErr) {
 							return
 						}
@@ -55,7 +55,6 @@ func main() {
 					}
 				}
 			}
-
 		})
 	}
 }

@@ -1,10 +1,10 @@
 package ftp
 
 import (
+	"FTPDumper/Core"
 	"github.com/jlaffaye/ftp"
 	"io"
 	"os"
-	"time"
 )
 
 type Client interface {
@@ -40,7 +40,7 @@ func NewFTPClient(username, password string) Client {
 //
 // It takes the server address as a parameter and returns an error.
 func (f *FTP) Connect(address string) error {
-	conn, err := ftp.Dial(address, ftp.DialWithTimeout(time.Second*5)) // make timeout in args
+	conn, err := ftp.Dial(address, ftp.DialWithTimeout(Core.Timeout)) // make timeout in args
 	if err != nil {
 		return err
 	}

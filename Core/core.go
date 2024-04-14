@@ -2,7 +2,6 @@ package Core
 
 import (
 	"FTPDumper/Utility"
-	"bytes"
 	"errors"
 	"fmt"
 	"github.com/integrii/flaggy"
@@ -26,8 +25,6 @@ var (
 	OutputFolder    = "files"
 	Type            EscannerType
 	Counter         = Utility.NewCounter()
-	DumperText      = bytes.NewReader([]byte("Fix your server credentials\n" +
-		"You Can Download FTPDumper From https://github.com/MatrixTM/FTPDumper\n"))
 )
 
 var (
