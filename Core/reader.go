@@ -3,6 +3,7 @@ package Core
 import "C"
 import (
 	"FTPDumper/CIDRManager"
+	"FTPDumper/Utility"
 	"bufio"
 	"errors"
 	"io"
@@ -31,11 +32,6 @@ type StdinReader struct {
 	scanner *bufio.Scanner
 }
 
-type FileReader struct {
-	file   *os.File
-	reader *bufio.Reader
-}
-
 type CIDRReader struct {
 	sync.Mutex
 	Cidrs    []*CIDRManager.CIDRManager
@@ -48,7 +44,7 @@ func NewReader(scanner string, method EscannerType) IReader {
 		return &StdinReader{scanner: bufio.NewScanner(os.Stdin)}
 	case EFILE:
 		file, _ := os.Open(scanner)
-		return &FileReader{file: file, reader: bufio.NewReader(file)}
+		return NewFileReader(bufio.NewReader(file))
 	case ECIDR:
 		reader := &CIDRReader{
 			Cidrs: make([]*CIDRManager.CIDRManager, 0),
@@ -61,10 +57,33 @@ func NewReader(scanner string, method EscannerType) IReader {
 		reader.CidrsLen = len(reader.Cidrs)
 		return reader
 	case EIP:
-		return &StdinReader{scanner: bufio.NewScanner(strings.NewReader(scanner))}
+		return &StdinReader{scanner: bufio.NewScanner(strings.NewReader(scanner + "\n"))}
 	}
 
 	return nil
+}
+
+func NewFileReader(reader *bufio.Reader) *CIDRReader {
+	cidrs := make([]*CIDRManager.CIDRManager, 0)
+	for {
+		line, err := reader.ReadString('\n')
+		if err != nil {
+			if err == io.EOF {
+				break
+			}
+			return nil
+		}
+
+		line = strings.TrimSpace(line)
+
+		if !Utility.IsCIDRv4(line) {
+			continue
+		}
+
+		cidrs = append(cidrs, CIDRManager.NewCIDR(line))
+	}
+
+	return &CIDRReader{Cidrs: cidrs, CidrsLen: len(cidrs)}
 }
 
 func (r *StdinReader) Next() (string, error) {
@@ -79,21 +98,6 @@ func (r *StdinReader) Next() (string, error) {
 
 func (r *StdinReader) Close() {
 	r.scanner = nil
-}
-
-func (r *FileReader) Next() (string, error) {
-	line, err := r.reader.ReadString('\n')
-	if err != nil {
-		if err == io.EOF {
-			return "", io.EOF
-		}
-		return "", err
-	}
-	return strings.TrimSpace(line), nil
-}
-
-func (r *FileReader) Close() {
-	r.file.Close()
 }
 
 func (c *CIDRReader) Next() (string, error) {

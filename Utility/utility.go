@@ -1,7 +1,6 @@
 package Utility
 
 import (
-	"bufio"
 	"net"
 	"os"
 	"strings"
@@ -22,42 +21,11 @@ func IsIPv4(s string) bool {
 	return ip != nil && ip.To4() != nil
 }
 
-func ReadFileLines(filename string) ([]string, error) {
-	file, err := os.Open(filename)
-	if err != nil {
-		return nil, err
+func SuffixAny(s string, suffixes []string) bool {
+	for _, e := range suffixes {
+		if strings.HasSuffix(s, e) {
+			return true
+		}
 	}
-	defer file.Close()
-
-	var lines []string
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		lines = append(lines, strings.TrimSpace(scanner.Text()))
-	}
-
-	return lines, scanner.Err()
-}
-
-func FileExists(filename string) bool {
-	info, err := os.Stat(filename)
-	if os.IsNotExist(err) {
-		return false
-	}
-	return !info.IsDir()
-}
-
-func FolderExists(folder string) bool {
-	info, err := os.Stat(folder)
-	if os.IsNotExist(err) {
-		return false
-	}
-	return info.IsDir()
-}
-
-func CreateFolder(folder string) error {
-	err := os.MkdirAll(folder, 0755)
-	if err != nil {
-		return err
-	}
-	return nil
+	return false
 }

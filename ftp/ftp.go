@@ -2,16 +2,18 @@ package ftp
 
 import (
 	"github.com/jlaffaye/ftp"
+	"io"
 	"os"
 	"time"
 )
 
 type Client interface {
-	Connect() error
+	Connect(address string) error
 	Login() error
 	Disconnect() error
-	GetFiles() error
-	UploadFile(filePath string) ([]File, error)
+	GetFiles() ([]File, error)
+	DownloadFile(output, filePath string) error
+	UploadFile(fileName string, reader io.Reader) error
 }
 
 type FTP struct {
@@ -25,7 +27,7 @@ type File struct {
 	Size int64
 }
 
-func NewFTPClient(username, password string) *FTP {
+func NewFTPClient(username, password string) Client {
 	f := &FTP{
 		Username: username,
 		Password: password,
@@ -38,7 +40,7 @@ func NewFTPClient(username, password string) *FTP {
 //
 // It takes the server address as a parameter and returns an error.
 func (f *FTP) Connect(address string) error {
-	conn, err := ftp.Dial(address, ftp.DialWithTimeout(time.Second*5))
+	conn, err := ftp.Dial(address, ftp.DialWithTimeout(time.Second*5)) // make timeout in args
 	if err != nil {
 		return err
 	}
@@ -51,7 +53,12 @@ func (f *FTP) Connect(address string) error {
 // Login logs the FTP client into the server.
 // It takes no parameters and returns an error.
 func (f *FTP) Login() error {
-	return f.conn.Login(f.Username, f.Password)
+	err := f.conn.Login(f.Username, f.Password)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 // Disconnect closes the FTP connection.
@@ -66,12 +73,6 @@ func (f *FTP) Disconnect() error {
 //
 // No parameters. It returns a slice of File struct and an error.
 func (f *FTP) GetFiles() ([]File, error) {
-	//// Retrieve the current directory from the FTP server
-	//dir, err := f.conn.CurrentDir()
-	//if err != nil {
-	//	return nil, err
-	//}
-
 	// List the files in the retrieved directory
 	list, err := f.conn.List(".")
 	if err != nil {
@@ -84,7 +85,7 @@ func (f *FTP) GetFiles() ([]File, error) {
 	// Iterate through the list of files and retrieve file size
 	for i, file := range list {
 		fileSize, err := f.conn.FileSize(file.Name)
-		if err != nil {
+		if err != nil || fileSize < 1 {
 			continue
 		}
 		// Populate the File struct with file name and size
@@ -100,28 +101,40 @@ func (f *FTP) GetFiles() ([]File, error) {
 
 // DownloadFile downloads a file from an FTP server.
 //
-// filePath specifies the path of the file to be downloaded.
-// Returns an error if any occurs during the download process.
-func (f *FTP) DownloadFile(filePath string) error {
-	// Store the file from the FTP server
-	_, err := f.conn.Retr(filePath)
-	return err
-}
-
-// UploadFile uploads a file to an FTP server.
+// Parameters:
+// - output: the path where the downloaded file will be saved.
+// - filePath: the path of the file to be downloaded from the FTP server.
 //
-// filePath specifies the path of the file to be uploaded.
-// Returns an error if any occurs during the upload process.
-func (f *FTP) UploadFile(filePath string) error {
-	// Open the file
-	file, err := os.Open(filePath)
+// Returns an error if any occurs during the download process.
+func (f *FTP) DownloadFile(output, filePath string) error {
+	// Retrieve the file from the FTP server
+	reader, err := f.conn.Retr(filePath)
 	if err != nil {
 		return err
 	}
 
-	// Ensure the file is closed after the function returns
+	// Ensure the reader is closed after the function returns
+	defer reader.Close()
+
+	// Create the output file
+	file, err := os.Create(output)
+	if err != nil {
+		return err
+	}
+
+	// Ensure the output file is closed after the function returns
 	defer file.Close()
 
-	// Store the file on the FTP server
-	return f.conn.Stor(filePath, file)
+	// Copy data from the FTP server reader to the output file
+	_, err = io.Copy(file, reader)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// UploadFile uploads a file to the FTP server.
+func (f *FTP) UploadFile(fileName string, reader io.Reader) error {
+	return f.conn.Stor(fileName, reader)
 }

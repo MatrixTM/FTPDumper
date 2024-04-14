@@ -58,7 +58,10 @@ func (c *CIDRManager) GetRandomIP() (string, error) {
 	}
 
 	for {
-		ip := c.Ipv4Min + rand.Uint32()%(c.Ipv4Max-c.Ipv4Min+1)
+		// Generate a random number within the range of the CIDR size
+		randomIndex := rand.Intn(c.Size)
+		ip := c.Ipv4Min + uint32(randomIndex)
+
 		ipParsed := c.Uint32ToIP(ip)
 		if !c.IsUsed(ip) {
 			c.SetUsed(ip)
@@ -81,5 +84,9 @@ func (c *CIDRManager) IPToUInt32(ip string) uint32 {
 
 func CountIPsInCIDR(ipNet *net.IPNet) int {
 	maskSize, _ := ipNet.Mask.Size()
+	if maskSize == 0 {
+		return 1 << 32 // 2^32 = 4,294,967,296
+	}
+
 	return 1 << (32 - maskSize)
 }
