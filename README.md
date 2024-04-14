@@ -1,16 +1,16 @@
-<p style="text-align: center"><img src="https://i.ibb.co/TR8ZCyn/New-Project.png" width="256" alt="logo"></p>
-<h1 style="text-align: center">FTPDumper - A FTP Servers Stealer</h1>
+<p align="center"><img src="https://i.ibb.co/TR8ZCyn/New-Project.png" width="256" alt="logo"></p>
+<h1 align="center">FTPDumper - A FTP Servers Stealer</h1>
 
 
-<p style="text-align: center">
+<p align="center">
 <img alt="FTPDumper forks" src="https://img.shields.io/github/forks/MatrixTM/FTPDumper?style=for-the-badge">
 <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/MatrixTM/FTPDumper?style=for-the-badge">
-<p style="text-align: center"><img src="https://views.whatilearened.today/views/github/MatrixTM/FTPDumper.svg" width="80px" height="28px" alt="View">
+<p align="center"><img src="https://views.whatilearened.today/views/github/MatrixTM/FTPDumper.svg" width="80px" height="28px" alt="View">
 </p>
 
 ___
 
-<p style="text-align: center"><img src="https://i.ibb.co/JvtB5vh/Ftp-Features.png" width="1040" alt="features"></p>
+<p align="center"><img src="https://i.ibb.co/JvtB5vh/Ftp-Features.png" width="1040" alt="features"></p>
 
 ## 🔍 Overview
 
