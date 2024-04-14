@@ -115,25 +115,45 @@ FTPDumper - Scan World FTP Servers and Steal Their Data
 ##### For this subject, the best hosting I found is [Aeza](https://aeza.net/?ref=375036 "Aeza Hosting")
 ##### You Can buy hourly 10Gbps & Ryzen 9 Servers with a cheap price
 
+[//]: # ()
+[//]: # ()
+[//]: # (## Star history)
 
-## Star history
+[//]: # ()
+[//]: # (---)
 
----
-<picture>
-  <source
-    media="(prefers-color-scheme: dark)"
-    srcset="
-      https://api.star-history.com/svg?repos=MatrixTM/FTPDumper&type=Date&theme=dark
-    "
-  />
-  <source
-    media="(prefers-color-scheme: light)"
-    srcset="
-      https://api.star-history.com/svg?repos=MatrixTM/FTPDumper&type=Date
-    "
-  />
-  <img
-    alt="Star History Chart"
-    src="https://api.star-history.com/svg?repos=MatrixTM/FTPDumper&type=Date"
-  />
-</picture>
+[//]: # (<picture>)
+
+[//]: # (  <source)
+
+[//]: # (    media="&#40;prefers-color-scheme: dark&#41;")
+
+[//]: # (    srcset=")
+
+[//]: # (      https://api.star-history.com/svg?repos=MatrixTM/FTPDumper&type=Date&theme=dark)
+
+[//]: # (    ")
+
+[//]: # (  />)
+
+[//]: # (  <source)
+
+[//]: # (    media="&#40;prefers-color-scheme: light&#41;")
+
+[//]: # (    srcset=")
+
+[//]: # (      https://api.star-history.com/svg?repos=MatrixTM/FTPDumper&type=Date)
+
+[//]: # (    ")
+
+[//]: # (  />)
+
+[//]: # (  <img)
+
+[//]: # (    alt="Star History Chart")
+
+[//]: # (    src="https://api.star-history.com/svg?repos=MatrixTM/FTPDumper&type=Date")
+
+[//]: # (  />)
+
+[//]: # (</picture>)
