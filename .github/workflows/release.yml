@@ -48,16 +48,15 @@ jobs:
 
         with:
           files: FTPDumper
-          tag_name: beta-${{ steps.versioning.outputs.version }}
-          prerelease: true
-          name: Beta ${{ steps.versioning.outputs.version }}
+          tag_name: release-${{ steps.versioning.outputs.version }}
+          name: Release ${{ steps.versioning.outputs.version }}
           repository: MatrixTM/FTPDumper
           body: |
-            ## Beta ${{ steps.versioning.outputs.version }} 💭
+            ## Release ${{ steps.versioning.outputs.version }} 💭
             
             ${{ github.event.head_commit.message }}
 
-            [Download 📥](https://github.com/MatrixTM/FTPDumper/releases/download/beta-${{ steps.versioning.outputs.version }}/FTPDumper)
+            [Download 📥](https://github.com/MatrixTM/FTPDumper/releases/download/release-${{ steps.versioning.outputs.version }}/FTPDumper)
 
 
 permissions:
