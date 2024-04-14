@@ -12,10 +12,23 @@ ___
 
 <p align="center"><img src="https://i.ibb.co/JvtB5vh/Ftp-Features.png" width="1040" alt="features"></p>
 
+## 📖 What is FTPDumper ?
+
+FTPDumper is an easy-to-use yet advanced FTP server file stealer.
+It can be utilized in massive FTP brute-force attacks, supporting various formats such as combo, pipe input, CIDR, files, and even a single IP address.
+
+FTPDumper boasts a plethora of features, including:
+- 💡 **Anti-Fake File Detection**: Utilizes advanced algorithms to detect and prevent the extraction of counterfeit files.
+- 🔍 **Self-Implemented Scanner**: Employs an internally developed scanning mechanism to ensure thorough and efficient.
+- 🖥️ **Modern and Sleek User Interface**: Offers a visually appealing and user-friendly interface for seamless navigation and operation.
+- ⚡ **Fast and Memory-Safe Operation**: Executes operations swiftly while maintaining optimal memory usage to prevent system slowdowns or crashes.
+- 🤝 **Smart Connection and Timeout Management**: Implements intelligent connection strategies and timeout configurations to make maximum accuracy and resource utilization.
+
+
 ## 🔍 Overview
 
 - 🚀 [Quickstart](#-quickstart)
-- ⚙️ [Arguments](#-arguments)
+- ⚙️ [Arguments](#%EF%B8%8F-arguments)
 - 👨‍💻 [Best Way to get a server](#-best-way-to-get-a-server)
 
 # 🚀 Quickstart
