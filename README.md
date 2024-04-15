@@ -24,6 +24,8 @@ FTPDumper boasts a plethora of features, including:
 - ⚡ **Fast and Memory-Safe Operation**: Executes operations swiftly while maintaining optimal memory usage to prevent system slowdowns or crashes.
 - 🤝 **Smart Connection and Timeout Management**: Implements intelligent connection strategies and timeout configurations to make maximum accuracy and resource utilization.
 
+###### Use it at your own RISK!
+
 
 ## 🔍 Overview
 
