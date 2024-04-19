@@ -5,7 +5,10 @@
 <p align="center">
 <img alt="FTPDumper forks" src="https://img.shields.io/github/forks/MatrixTM/FTPDumper?style=for-the-badge">
 <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/MatrixTM/FTPDumper?style=for-the-badge">
-<p align="center"><img src="https://views.whatilearened.today/views/github/MatrixTM/FTPDumper.svg" width="80px" height="28px" alt="View">
+<br>
+<img alt="GitHub Downloads" src="https://img.shields.io/github/downloads/MatrixTM/FTPDumper/FTPDumper?style=social&color=07c1f0">
+<p align="center">
+ <img src="https://views.whatilearened.today/views/github/MatrixTM/FTPDumper.svg" width="80px" height="28px" alt="View">
 </p>
 
 ___
