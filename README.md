@@ -13,7 +13,7 @@
 
 ___
 
-<p align="center"><img src="https://i.ibb.co/JvtB5vh/Ftp-Features.png" width="1040" alt="features"></p>
+<p align="center"><img src="https://i.imgur.com/H39uBH3.png" width="1040" alt="features"></p>
 
 ## 📖 What is FTPDumper ?
 
