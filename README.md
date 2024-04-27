@@ -6,7 +6,7 @@
 <img alt="FTPDumper forks" src="https://img.shields.io/github/forks/MatrixTM/FTPDumper?style=for-the-badge">
 <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/MatrixTM/FTPDumper?style=for-the-badge">
 <br>
-<img alt="GitHub Downloads" src="https://img.shields.io/github/downloads/MatrixTM/FTPDumper/FTPDumper?style=social&color=07c1f0">
+<!-- <img alt="GitHub Downloads" src="https://img.shields.io/github/downloads/MatrixTM/FTPDumper/FTPDumper?style=social&color=07c1f0"> -->
 <p align="center">
  <img src="https://views.whatilearened.today/views/github/MatrixTM/FTPDumper.svg" width="80px" height="28px" alt="View">
 </p>
@@ -116,7 +116,7 @@ FTPDumper - Scan World FTP Servers and Steal Their Data
 
 # 👨‍💻 Best Way to get a server
 
-<a href="https://aeza.net/?ref=375036"><img src="https://i.ibb.co/LthJcL8/image.png" width="728" height="90"  alt="aeza"></a>
+<a href="https://aeza.net/?ref=375036"><img src="https://i.ibb.co/wgq9Ly8/aezabanner.png" width="728" height="90"  alt="aeza"></a>
 ##### For this subject, the best hosting I found is [Aeza](https://aeza.net/?ref=375036 "Aeza Hosting")
 ##### You Can buy hourly 10Gbps & Ryzen 9 Servers with a cheap price
 
