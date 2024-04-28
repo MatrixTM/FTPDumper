@@ -1,6 +1,5 @@
 package Core
 
-import "C"
 import (
 	"FTPDumper/CIDRManager"
 	"FTPDumper/Utility"
