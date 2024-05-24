@@ -22,10 +22,10 @@ It can be utilized in massive FTP brute-force attacks, supporting various format
 
 FTPDumper boasts a plethora of features, including:
 - 💡 **Anti-Fake File Detection**: Utilizes advanced algorithms to detect and prevent the extraction of counterfeit files.
-- 🔍 **Self-Implemented Scanner**: Employs an internally developed scanning mechanism to ensure thorough and efficient.
+- 🔍 **Self-Implemented Scanner**: Employs an internally developed scanning mechanism to ensure thoroughness and efficiency.
 - 🖥️ **Modern and Sleek User Interface**: Offers a visually appealing and user-friendly interface for seamless navigation and operation.
 - ⚡ **Fast and Memory-Safe Operation**: Executes operations swiftly while maintaining optimal memory usage to prevent system slowdowns or crashes.
-- 🤝 **Smart Connection and Timeout Management**: Implements intelligent connection strategies and timeout configurations to make maximum accuracy and resource utilization.
+- 🤝 **Smart Connection and Timeout Management**: Implements intelligent connection strategies and timeout configurations to maximize accuracy and resource utilization.
 
 ###### Use it at your own RISK!
 
