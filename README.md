@@ -1,5 +1,5 @@
 <p align="center"><img src="https://i.ibb.co/TR8ZCyn/New-Project.png" width="256" alt="logo"></p>
-<h1 align="center">FTPDumper - A FTP Servers Stealer</h1>
+<h1 align="center">FTPDumper - An FTP Servers Stealer</h1>
 
 
 <p align="center">
