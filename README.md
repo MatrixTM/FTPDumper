@@ -116,7 +116,7 @@ FTPDumper - Scan World FTP Servers and Steal Their Data
 
 # 👨‍💻 Best Way to get a server
 
-<a href="https://aeza.net/?ref=375036"><img src="https://i.ibb.co/wgq9Ly8/aezabanner.png" width="728" height="90"  alt="aeza"></a>
+<a href="https://aeza.net/?ref=375036"><img src="https://github.com/user-attachments/assets/f875428b-cb35-442d-8dce-cdc5ead4ffbd" width="728" height="90"  alt="aeza"></a>
 ##### For this subject, the best hosting I found is [Aeza](https://aeza.net/?ref=375036 "Aeza Hosting")
 ##### You Can buy hourly 10Gbps & Ryzen 9 Servers with a cheap price
 
